@@ -1,0 +1,6 @@
+<resources>
+    <!-- Note: I use a hack here: insert Tab's with \t\t\t... to attempt to center the title in Toolbar -->
+    <string name="app_name"><font face="cursive" color="yellow" size="18"><b>BlueTooth Joystick</b></font></string>
+    <string name="none_paired">No BT devices have been paired</string>
+    <string name="action_settings">Settings</string>
+</resources>

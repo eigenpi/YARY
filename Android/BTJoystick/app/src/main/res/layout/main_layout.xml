@@ -1,0 +1,119 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <!--
+        NOTE: useful information about layouts here:
+        http://android4beginners.com/2013/07/lesson-2-1-how-to-build-android-app-with-simple-but-powerful-linearlayout-plus-layout-orientation-as-well-as-size-and-weight-of-elements/
+        https://medium.com/livefront/how-to-change-the-toolbar-font-on-android-b1ba87e7e29d
+        https://stackoverflow.com/questions/26533510/android-toolbar-center-title-and-custom-font?page=1&tab=votes#tab-top
+        https://guides.codepath.com/android/using-the-app-toolbar
+        https://stackoverflow.com/questions/39535475/what-is-the-default-font-family-in-android
+    -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!--
+            (1) Upper part of UI is the Joystick
+        -->
+        <com.eigenpi.btjoystick.JoystickView
+            android:id="@+id/joystickView"
+            android:layout_width="175dip"
+            android:layout_height="175dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dip" />
+
+        <TableLayout android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip">
+            <TableRow>
+                <TextView android:text="X"
+                    android:layout_width="50dip"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView android:text=""
+                    android:id="@+id/TextViewX"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="Y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+                <TextView android:text=""
+                    android:id="@+id/TextViewY"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+            </TableRow>
+        </TableLayout>
+
+
+        <!--
+            (2) Upper part of UI is for TX
+        -->
+        <TextView android:id="@+id/title_of_tx_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Transmitter (TX):"
+            android:background="#666"
+            android:textColor="#fff"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/txtDataSent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Data Sent"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        <!--
+            (3) Lower part of UI is for RX
+        -->
+        <TextView android:id="@+id/title_of_rx_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Receiver (RX):"
+            android:background="#666"
+            android:textColor="#fff"
+            android:paddingLeft="5dp" />
+
+        <TextView
+            android:id="@+id/txtDataReceived"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_above="@+id/txtDataLength"
+            android:text="Received Data"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:id="@+id/txtDataLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_alignLeft="@+id/txtDataReceived"
+            android:layout_alignParentBottom="true"
+            android:text="Received Data Length"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    </LinearLayout>
+
+</RelativeLayout>
